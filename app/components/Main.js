@@ -12,7 +12,13 @@ var Main = createReactClass({
 
   // Here we set a generic state associated with the text being searched for
   getInitialState: function() {
-    return { term: "" };
+    return { 
+      searchTerm: "",
+      startYear: "",
+      endYear: "",
+      results: [],
+      history: []
+    }
   },
 
   // This function will respond to the user input
@@ -56,7 +62,7 @@ var Main = createReactClass({
                   <div className="form-group">
                     <label for="searchTerm">Search Term:</label>
                     <input
-                      value={this.state.term}
+                      value={this.state.searchTerm}
                       type="text"
                       className="form-control text-center"
                       id="searchTerm"
@@ -66,21 +72,9 @@ var Main = createReactClass({
                   </div>
 
                   <div className="form-group">
-                    <label for="numRecords">Number of Records to Retrieve:</label>
-                    <input
-                      value={this.state.term}
-                      type="text"
-                      className="form-control text-center"
-                      id="numRecords"
-                      onChange={this.handleChange}
-                      required
-                    />  
-                  </div>
-
-                  <div className="form-group">
                     <label for="startYear">Start Year (Optional):</label>
                     <input
-                      value={this.state.term}
+                      value={this.state.startYear}
                       type="text"
                       className="form-control text-center"
                       id="startYear"
@@ -92,7 +86,7 @@ var Main = createReactClass({
                   <div className="form-group">
                     <label for="endYear">End Year (Optional):</label>
                     <input
-                      value={this.state.term}
+                      value={this.state.endYear}
                       type="text"
                       className="form-control text-center"
                       id="endYear"
