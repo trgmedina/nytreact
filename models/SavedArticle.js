@@ -4,7 +4,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 // Create article schema
-var ArticleSchema = new Schema({
+var SavedArticleSchema = new Schema({
   title: {
     type: String,
     required: true
@@ -19,8 +19,8 @@ var ArticleSchema = new Schema({
   }
 });
 
-// Create the Article model with the ArticleSchema
-var Article = mongoose.model("Article", ArticleSchema);
+// Create the SavedArticle model with the SavedArticleSchema
+var SavedArticle = mongoose.model("SavedArticle", SavedArticleSchema);
 
 // Export the model
-module.exports = Article;
+module.exports = SavedArticle;
