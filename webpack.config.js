@@ -14,6 +14,7 @@ module.exports = {
       {
         // Only working with files that in in a .js or .jsx extension
         test: /\.jsx?$/,
+        include: /app/,
         loader: "babel",
         query: {
           // These are the specific transformations we'll be using.
